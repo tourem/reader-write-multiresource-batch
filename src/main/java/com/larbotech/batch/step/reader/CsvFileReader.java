@@ -61,8 +61,10 @@ public class CsvFileReader extends SimpleCompletionPolicy implements ItemReader<
   }
 
   @Autowired
-  public CsvFileReader(BatchService batchService, BatchDao batchDao) {
-    contextReader = batchService.getContextReader(batchDao.findByName("test"));
+  public CsvFileReader(
+          @Value("#{jobParameters['batchName']}") String batchName,
+    BatchService batchService, BatchDao batchDao) {
+    contextReader = batchService.getContextReader(batchDao.findByName(batchName));
     super.setChunkSize(DEFAULT_CHUNK_SIZE);
   }
 
