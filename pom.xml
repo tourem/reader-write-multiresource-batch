@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.javasampleapproach.springbatch-csv-postgresql</groupId>
-	<artifactId>springbatch-csv-postgresql</artifactId>
+	<groupId>com.larbotech</groupId>
+	<artifactId>reader-write-multiresource-batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBatchCSVPostgreSQL</name>
+	<name>reader-write-multiresource-batch</name>
 	<description>Demo project for Spring Batch CSV Data to PostgreSQL</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
+		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
