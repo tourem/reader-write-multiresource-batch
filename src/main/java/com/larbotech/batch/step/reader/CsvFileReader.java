@@ -20,6 +20,7 @@ import java.nio.file.Paths;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.repeat.RepeatContext;
 import org.springframework.batch.repeat.RepeatStatus;
@@ -36,6 +37,7 @@ import org.supercsv.io.ICsvMapReader;
 import org.supercsv.prefs.CsvPreference;
 
 @Slf4j
+@StepScope
 @Component
 public class CsvFileReader extends SimpleCompletionPolicy implements ItemReader<Line> {
 
@@ -72,7 +74,7 @@ public class CsvFileReader extends SimpleCompletionPolicy implements ItemReader<
   public Line read()
       throws Exception {
 
-    String line = null;
+    String line;
 
     if (isEmpty(inputResources)) {
       return null;

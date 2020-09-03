@@ -1,6 +1,6 @@
 package com.larbotech.batch.exception;
 
-public class BadParameterizedStepJobException extends BatchException {
+public class BadParameterizedStepJobException extends RuntimeException {
 
     static final long serialVersionUID = 1L;
 

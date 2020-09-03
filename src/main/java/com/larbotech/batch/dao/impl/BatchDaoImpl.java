@@ -27,13 +27,7 @@ public class BatchDaoImpl extends JdbcDaoSupport implements BatchDao {
   @Override
   public Batch findByName(String name) {
     Object[] inputs = new Object[]{name};
-    Batch batch = getJdbcTemplate()
+   return getJdbcTemplate()
         .queryForObject(query, inputs, new BeanPropertyRowMapper<>(Batch.class));
-
-    if (batch == null) {
-      throw new BatchNameNotFoundException("batch name not found: " + name);
-    }
-
-    return batch;
   }
 }

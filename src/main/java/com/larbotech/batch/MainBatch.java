@@ -12,6 +12,7 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.support.ExitCodeMapper;
 import org.springframework.batch.core.launch.support.SimpleJvmExitCodeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Arrays;
 import java.util.Date;
 
-import static com.larbotech.batc.model.BatchArgumentEnum.BATCH_NAME_ARG;
+import static com.larbotech.batch.model.BatchArgumentEnum.BATCH_NAME_ARG;
 
 @Slf4j
 @SpringBootApplication

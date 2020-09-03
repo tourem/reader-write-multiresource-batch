@@ -3,6 +3,7 @@ package com.larbotech.batch.step.writer;
 import static java.lang.System.getProperty;
 import static java.util.Objects.requireNonNull;
 import static org.springframework.util.CollectionUtils.isEmpty;
+import static org.springframework.util.StringUtils.*;
 
 import com.larbotech.batch.model.EndFile;
 import com.larbotech.batch.model.Line;
@@ -15,6 +16,7 @@ import java.util.List;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 @Component
 public class CsvFileWriter implements ItemWriter<Line> {
@@ -52,7 +54,7 @@ public class CsvFileWriter implements ItemWriter<Line> {
     for (Line line : items) {
       if (line instanceof EndFile) {
         endFile = true;
-      } else {
+      } else if (line.isValid() && !StringUtils.isEmpty(line.getValue())){
         writer.append(line.getValue()).append(getProperty("line.separator"));
       }
     }
